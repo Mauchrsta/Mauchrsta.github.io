@@ -7,6 +7,22 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+    <script>
+        function onLoad(){
+            $(".img").click(swipe());
+        }
+        function swipe(){
+            var largeImage =  $(".img");
+            largeImage.css("display: block");
+            largeImage.css("width: 75vw");
+            largeImage.css("height: 75vh;");
+            var url=largeImage.attr('src');
+             window.open(url,'Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1');
+        }
+        window.onload = onLoad();
+    </script>
         <style>
             body{
                 background-color: #222222;
