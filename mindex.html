@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/pictures/blackcircl2.png"/>
+    <link rel="shortcut icon" href="/pictures/blackcircl2.png" />
+    <link rel="address bar icon" href="/pictures/blackcircl2.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/pictures/blackcircl2.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="/pictures/blackcircl2.png"/>
+   <link rel="icon" type="image/png" sizes="16x16" href="/pictures/blackcircl2.png"/>
+   <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Outline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="description" content="Photographs">
+    <meta name="keywords" content="Photographs">
+    <meta name="author" content="Logan Sage">
+    <meta name="author" content="Lauren-Megan Botha">
+    <meta name="author" content="Seun Suberu">
+    </script>
+    <title>Home</title>
+    <style>
+            body{
+                background-color: #222222;
+                margin: 0;
+                padding: 0;
+
+                /* make it look decent enough */
+                color: #cdcdcd;
+                font-family: 'Montserrat', sans-serif;
+                height: 100vh;
+                min-height: 100vh;
+                }
+                a
+                {
+                text-decoration: none;
+                color: #000000;
+
+                transition: color 0.3s ease;
+                }
+
+                #menuToggle li:hover
+                {
+                color: tomato;
+
+                }
+
+                #menuToggle
+                {
+                display: block;
+                position: fixed;
+                top: 50px;
+                left: 50px;
+
+                z-index: 2;
+
+                -webkit-user-select: none;
+                user-select: none;
+                }
+
+                #poop
+                {
+                display: block;
+                position: fixed;
+                top: 50px;
+                right: 50px;
+                z-index: 1;
+
+                }
+
+                #poop button {
+                    background-color: Transparent;
+                    background: #cdcdcd;
+                    border-radius: 50px;
+                    background-repeat:no-repeat;
+                    border: none;
+                    cursor:pointer;
+                    overflow: hidden;
+                    outline:none;
+                    align-content: center;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    height: 27px;
+
+
+                }
+                #poop i{
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                }
+
+                #menuToggle input
+                {
+                display: block;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: -7px;
+                left: -5px;
+
+                cursor: pointer;
+
+                opacity: 0; /* hide this */
+                z-index: 3; /* and place it over the hamburger */
+
+                -webkit-touch-callout: none;
+                }
+
+                /*
+                * Just a quick hamburger
+                */
+                #menuToggle span
+                {
+                display: block;
+                width: 75px;
+                height: 8px;
+                margin-bottom: 10px;
+                position: relative;
+
+                background: #cdcdcd;
+                border-radius: 3px;
+
+                z-index: 2;
+
+                transform-origin: 8px 0px;
+
+                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                            opacity 0.55s ease;
+                }
+
+                #menuToggle span:first-child
+                {
+                transform-origin: 0% 0%;
+                }
+
+                #menuToggle span:nth-last-child(2)
+                {
+                transform-origin: 0% 100%;
+                }
+
+                /*
+                * Transform all the slices of hamburger
+                * into a crossmark.
+                */
+                #menuToggle input:checked ~ span
+                {
+                opacity: 1;
+                transform: rotate(45deg) translate(-2px, -5px);
+                background: #232323;
+                }
+
+                /*
+                * But let's hide the middle one.
+                */
+                #menuToggle input:checked ~ span:nth-last-child(3)
+                {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+                }
+
+                /*
+                * Ohyeah and the last one should go the other direction
+                */
+                #menuToggle input:checked ~ span:nth-last-child(2)
+                {
+                transform: rotate(-45deg) translate(0, 5px);
+
+                }
+
+                /*
+                * Make this absolute positioned
+                * at the top left of the screen
+                */
+                #menu
+                {
+                position: fixed;
+                width: 75%;
+                margin: -100px 0 0 -50px;
+                padding: 50px;
+                padding-top: 125px;
+
+                background: #ededed;
+                list-style-type: none;
+                -webkit-font-smoothing: antialiased;
+                /* to stop flickering of text in safari */
+
+                transform-origin: 0% 0%;
+                transform: translate(-100%, 0);
+
+                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+                height: 100%;
+                }
+
+                #menu li
+                {
+                padding: 30px 0 0 0 ;
+                font-size: 50px;
+                color:black;
+                transition: color 0.3s ease;
+                }
+
+                /*
+                * And let's slide it in from the left
+                */
+                #menuToggle input:checked ~ ul
+                {
+                transform: none;
+                }
+                #logo{
+                    vertical-align: middle;
+                text-transform: uppercase;
+                position:fixed;
+                background-color: #232323;
+                text-align: center;
+                /* font-size: 85px */
+                justify-content:center;
+                width:100%;
+                padding-top: 0px;
+                margin-top: 0px;
+                position: 0;
+                padding-bottom: 10px;
+                top:0;
+                height: 140px;
+                z-index: 1;
+                border-color: 2px solid black;
+                }
+                #plus{
+                color:tomato;
+                font-size: 7vw;
+                }
+                #college{
+                color:lightgrey;
+                font-size: 7vw;
+                border-color: 2px solid black;
+                margin: 10px;
+                font-family: "Segoe UI",Arial,sans-serif; 
+                    font-weight: 400;
+
+                }
+                #backy{
+                margin-top: 150px;
+                cursor: pointer;
+                font-size: 60pt;
+                color:tomato;
+                cursor: pointer;
+                padding-right: 10%;
+                }
+                #texty{
+                font-size:50px;
+                text-align:center;
+
+
+                }
+                #personcenter{
+                text-align: center;
+                }
+                #person{
+                color:black;
+                font-size: 300px;
+                }
+                #tablecenter{
+                color:black;
+                margin-bottom: 60%;
+
+                }
+                footer {
+                background-color: #232323;
+                margin-bottom: -20px;
+                text-align: center;
+                padding-bottom: 20px;
+                }
+                #profile{
+                color:black;
+                height:300px;
+                }
+                #tablecenter h2{
+                color:tomato;
+
+                }
+
+        </style>
+  </head>
+  <body>
+    <nav role="navigation">
+
+        <!-- <div class = "container"> -->
+            <div id="menuToggle">
+                <input id="checker" type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu" style="font-family: 'Montserrat', sans-serif;">
+                    <a href="mindex.html"><li>Home</li></a><br>
+                    <a href="mpics.html"><li>Pictures</li></a><br>
+                    <a href="mcontact.html"><li> Resources</li></a><br>
+            </ul>
+            </div>
+
+
+            <div id="logo" style="text-align: center; justify-content: center;">
+                <h1 id="college"><a href="mindex.html" style="color: #f2f2f2; font-size: 4vw; font-family: 'Shadows Into Light', cursive;">Stallworth Photographs <i class="material-icons" style="font-size: 4vw;">
+                    monochrome_photos
+                    </i>
+                    
+                    <!-- For IE9 or below. -->
+                    
+                    <!-- <i class="material-icons">
+                    monochrome_photos
+                    </i></a> -->
+                </h1> 
+    
+            </a>
+            </div>
+        <!-- </div> -->
+        <div>
+            <table style = "width: 100%; height: 500px; margin-top: 20vh;">
+                <tr>
+                    <td style = "border: 2px solid white; width: 25%;">
+                        <img src= "IMG_3272.JPG" style= "max-width: 100%;">
+                    </td>
+                </tr>
+                <tr></tr>
+                    <td style = "border: 2px solid white; width: 75%; vertical-align: text-top;">
+                        <h1 style="color: #f2f2f2; padding-left: 5%; margin-right: 5%; font-family: 'Montserrat', sans-serif;">
+                            About Maurice Stallworth
+                        </h1>
+                        <p style="color: #f2f2f2; padding-left: 5%; line-height: 50px; font-family: 'Montserrat', sans-serif;">
+                               Name: Maurice Stallworth <br>
+                               Hometown: Mesquite,Texas<br>
+                               Resides: Austin,Texas<br>
+                               About: Maurice Stallworth is a photographer from Mesquite,Texas graduating from Mesquite High School in 2019. <br>
+                                He is currently a freshman student at the University of Texas at Austin studying Radio-Television-Film <br>
+                                 with aspirations of being a world class photographer, cinematographer, and director. <br>
+                                  Maurice Stallworth lives in Austin, Texas.
+
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+  </body>
+</html>
