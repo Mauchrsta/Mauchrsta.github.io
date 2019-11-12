@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            Pictures
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <style>
+            body{
+                background-color: #222222;
+                font-family: 'Montserrat', sans-serif;
+            }
+           
+            a
+            {
+            text-decoration: none;
+            color: #000000;
+
+            transition: color 0.3s ease;
+            }
+
+            #menuToggle li:hover
+            {
+            color: tomato;
+
+            }
+
+            #menuToggle
+            {
+            display: block;
+            position: fixed;
+            top: 35px;
+            left: 50px;
+
+            z-index: 2;
+
+            -webkit-user-select: none;
+            user-select: none;
+            }
+            #menuToggle input
+            {
+            display: block;
+            width: 100px;
+            height: 3vh;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+
+            cursor: pointer;
+
+            opacity: 0; /* hide this */
+            z-index: 3; /* and place it over the hamburger */
+
+            -webkit-touch-callout: none;
+            }
+
+            /*
+            * Just a quick hamburger
+            */
+            #menuToggle span
+            {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+
+            background: #cdcdcd;
+            border-radius: 3px;
+
+            z-index: 2;
+
+            transform-origin: 4px 0px;
+
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+            }
+
+            #menuToggle span:first-child
+            {
+            transform-origin: 0% 0%;
+            }
+
+            #menuToggle span:nth-last-child(2)
+            {
+            transform-origin: 0% 100%;
+            }
+
+            /*
+            * Transform all the slices of hamburger
+            * into a crossmark.
+            */
+            #menuToggle input:checked ~ span
+            {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #232323;
+            }
+
+            /*
+            * But let's hide the middle one.
+            */
+            #menuToggle input:checked ~ span:nth-last-child(3)
+            {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+            }
+
+            /*
+            * Ohyeah and the last one should go the other direction
+            */
+            #menuToggle input:checked ~ span:nth-last-child(2)
+            {
+            transform: rotate(-45deg) translate(0, -1px);
+
+            }
+
+            /*
+            * Make this absolute positioned
+            * at the top left of the screen
+            */
+            #menu
+            {
+            position: fixed;
+            width: 33vw;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-top: 125px;
+
+            background: #ededed;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+            height: 1000px;
+            }
+
+            #menu li
+            {
+            padding: 10px 0 0 0 ;
+            font-size: 22px;
+            color:black;
+            transition: color 0.3s ease;
+            }
+
+            /*
+            * And let's slide it in from the left
+            */
+            #menuToggle input:checked ~ ul
+            {
+            transform: none;
+            }
+            #logo{
+            
+                text-transform: uppercase;
+                position:fixed;
+                background-color: #292929;
+                text-align: center;
+                font-size: 2.5vh;
+                justify-content: center;
+                width: 100%; 
+                padding-top: 0px;
+                margin-top: 0px;
+                position: 0;
+                padding-bottom: 10px;
+                top:0;
+                left: 0;
+                height: 13%;
+                z-index: 1;
+                border-color: 2px solid black;
+            }
+            #college{
+                margin-bottom: 10%;
+                color: #f2f2f2;
+                font-family: 'Shadows Into Light', cursive;
+            }
+            td{
+                margin-bottom: 5vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="index.html"><li>Home</li></a><br>
+                <a href="pics.html"><li>Pictures</li></a><br>
+                <a href="contact.html"><li>Contact</li></a><br>
+            </ul>
+        </div>
+        <div id="logo">
+            <h1 id="college">  <a href="index.html" style="color: #f2f2f2";>Stallworth Photographs <i class="material-icons" style="font-size: 2vw;">
+                monochrome_photos
+                </i></a></h1>
+
+        </a>
+        </div>
+        <div style = "text-align: center;">
+            <h1 style= "color: #f2f2f2; margin-top: 13%; font-family: 'Montserrat', sans-serif;">
+                Pictures by Maurice Stallworth
+            </h1>
+        </div>
+        <table style = "width: 100%; height: 2000px; margin-top: 5%">
+            <tr>
+                <td style = "border: 2px solid white; max-width: 33vw;">
+                    <img src="IMG_4314.JPG" style= "max-width: 33vw;">
+                </td>
+                <td style = "border: 2px solid white; max-width: 33vw;">
+                    <img src= "IMG_4245.JPG" style= "max-width: 33vw;">
+                </td>
+                <td style = "border: 2px solid white; max-width: 33vw;">
+                    <img src="IMG_4246.JPG" style= "max-width: 33vw;">
+                </td>
+            </tr>
+            <tr>
+                    <td style = "border: 2px solid white; max-width: 33%;">
+                        <img src= "IMG_4249.JPG" style= "max-width: 33vw;">
+                    </td>
+                    <td style = "border: 2px solid white; max-width: 33%;">
+                        <img src = "IMG_4272.JPG" style= "max-width: 33vw;">
+                    </td>
+                    <td style = "border: 2px solid white; max-width: 33%;">
+                        <img src="IMG_4276.JPG" style= "max-width: 33vw;">
+                    </td>
+            </tr>
+            <tr>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src="IMG_4277.JPG" style = "max-width: 33vw;">
+                    </td>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src="IMG_4278(1).JPG" style = "max-width: 33vw;">
+                    </td>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src= "IMG_4278.JPG" style = "max-width: 33vw;">
+                    </td>
+            </tr>
+            <tr>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src="IMG_4279.JPG" style = "max-width: 33vw;">
+                    </td>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src= "IMG_4284.JPG" style = "max-width: 33vw;">
+                    </td>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src = "IMG_4291.JPG" style = "max-width: 33vw;">
+                    </td>
+            </tr>    
+            <tr>
+                <td style = "border: 2px solid white; width: 33%;">
+                    <img src="IMG_4293.JPG" style = "max-width: 33vw;">
+                </td>
+                <td style = "border: 2px solid white; width: 33%;">
+                    <img src= "IMG_4296.JPG" style = "max-width: 33vw;">
+                </td>
+                <td style = "border: 2px solid white; width: 33%;">
+                    <img src = "IMG_4307.JPG" style = "max-width: 33vw;">
+                </td>
+        </tr>
+        <tr>
+            <td style = "border: 2px solid white; width: 33%;">
+                <img src="IMG_4308.JPG" style = "max-width: 33vw;">
+            </td>
+            <td style = "border: 2px solid white; width: 33%;">
+                <img src= "IMG_4309.JPG" style = "max-width: 33vw;">
+            </td>
+            <td style = "border: 2px solid white; width: 33%;">
+                <img src = "IMG_4312.JPG" style = "max-width: 33vw;">
+            </td>
+    </tr>  
+        </table>
+    </body>
+</html>
