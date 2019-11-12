@@ -8,6 +8,16 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+        <script>
+          function onLoad(){
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                document.location.href ="mindex.html";
+            }
+          }
+
+            window.onload = onLoad;
+      </script>  
         <style>
             body{
                 background-color: #222222;
