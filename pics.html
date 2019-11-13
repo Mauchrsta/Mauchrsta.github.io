@@ -7,11 +7,51 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js">
-    </script>
-    <script>
+      <script>
+        
         function onLoad(){
-            $(".img").click(swipe());
+            // $("#img1").click(showMyImage("IMG_4314.JPG"));
+            // $("#img2").click(showMyImage("IMG_4245.JPG"));
+            // $("#img3").click(showMyImage("IMG_4246.JPG"));
+            // $("#img4").click(showMyImage("IMG_4249.JPG"));
+            // $("#img5").click(showMyImage("IMG_4272.JPG"));
+            // $("#img6").click(showMyImage("IMG_4276.JPG"));
+            // $("#img7").click(showMyImage("IMG_4277.JPG"));
+            // $("#img8").click(showMyImage("IMG_4278(1).JPG"));
+            // $("#img9").click(showMyImage("IMG_4278.JPG"));
+            // $("#img10").click(showMyImage("IMG_4279.JPG"));
+            // $("#img11").click(showMyImage("IMG_4284.JPG"));
+            // $("#img12").click(showMyImage("IMG_4291.JPG"));
+            // $("#img13").click(showMyImage("IMG_4293.JPG"));
+            // $("#img14").click(showMyImage("IMG_4296.JPG"));
+            // $("#img15").click(showMyImage("IMG_4307.JPG"));
+            // $("#img16").click(showMyImage("IMG_4308.JPG"));
+            // $("#img17").click(showMyImage("IMG_4309.JPG"));
+            // $("#img18").click(showMyImage("IMG_4312.JPG"));
+
+        }
+        var x = 0;
+        var y;
+        function showMyImage(y) {
+            this.y = y;
+            console.log("Here");
+            // var img = $("#image-holder");
+            var img = document.getElementById('image-holder');
+            img.src = "https://mauchrsta.github.io/"+y;
+            img.style.visibility = 'visible';
+            img.style.display = 'block';
+            
+            // $("#image-holder").css("display: block;");
+            // $("#image-holder").attr("src", "https://mauchrsta.github.io/"+y);
+            // img.src = "https://mauchrsta.github.io/"+y;
+            // $("#image-holder").css("visibility: visibile;");
+            
+            }
+
+        function checkImage(){
+            var img = document.getElementById('image-holder');
+            img.style.visibility = 'hidden';
+            img.style.display = 'none';
         }
         function swipe(){
             var largeImage =  $(".img");
@@ -21,7 +61,7 @@
             var url=largeImage.attr('src');
              window.open(url,'Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1');
         }
-        window.onload = onLoad();
+        window.onload = onLoad;
     </script>
         <style>
             body{
@@ -201,6 +241,15 @@
             td{
                 margin-bottom: 5vh;
             }
+            #image-holder {
+                    width: 80vw;
+                    height: auto;
+                    position: absolute;
+                    left: 12%;
+                    right: auto;
+                    top: 25%; /* Or perhaps different coordinates */
+                    display: none;
+                    }
         </style>
     </head>
     <body>
@@ -227,73 +276,78 @@
                 Pictures by Maurice Stallworth
             </h1>
         </div>
-        <table style = "width: 100%; height: 2000px; margin-top: 5%">
-            <tr>
-                <td style = "border: 2px solid white; max-width: 33vw;">
-                    <img src="IMG_4314.JPG" style= "max-width: 33vw;">
-                </td>
-                <td style = "border: 2px solid white; max-width: 33vw;">
-                    <img src= "IMG_4245.JPG" style= "max-width: 33vw;">
-                </td>
-                <td style = "border: 2px solid white; max-width: 33vw;">
-                    <img src="IMG_4246.JPG" style= "max-width: 33vw;">
-                </td>
+        <div>
+            <img id="image-holder" alt="" style="visibility: hidden;" onclick='checkImage();'>
+        </div>
+        <div>
+            <table style = "width: 100%; height: 2000px; margin-top: 5%">
+                <tr>
+                    <td style = "border: 2px solid white; max-width: 33vw;">
+                        <img src="IMG_4314.JPG" style= "max-width: 33vw;" id="img1" onclick = 'showMyImage("IMG_4314.JPG");'>
+                    </td>
+                    <td style = "border: 2px solid white; max-width: 33vw;">
+                        <img src= "IMG_4245.JPG" style= "max-width: 33vw;" id="img2" onclick = 'showMyImage("IMG_4245.JPG");'>
+                    </td>
+                    <td style = "border: 2px solid white; max-width: 33vw;">
+                        <img src="IMG_4246.JPG" style= "max-width: 33vw;" id="img3" onclick = 'showMyImage("IMG_4246.JPG");'>
+                    </td>
+                </tr>
+                <tr>
+                        <td style = "border: 2px solid white; max-width: 33%;">
+                            <img src= "IMG_4249.JPG" style= "max-width: 33vw;" id="img4" onclick = 'showMyImage("IMG_4249.JPG");'>
+                        </td>
+                        <td style = "border: 2px solid white; max-width: 33%;">
+                            <img src = "IMG_4272.JPG" style= "max-width: 33vw;" id="img5" onclick = 'showMyImage("IMG_4272.JPG");'>
+                        </td>
+                        <td style = "border: 2px solid white; max-width: 33%;">
+                            <img src="IMG_4276.JPG" style= "max-width: 33vw;" id="img6" onclick = 'showMyImage("IMG_4276.JPG");'>
+                        </td>
+                </tr>
+                <tr>
+                        <td style = "border: 2px solid white; width: 33%;">
+                            <img src="IMG_4277.JPG" style = "max-width: 33vw;" id="img7" onclick = 'showMyImage("IMG_4277.JPG");'>
+                        </td>
+                        <td style = "border: 2px solid white; width: 33%;">
+                            <img src="IMG_4278(1).JPG" style = "max-width: 33vw;" id="img8" onclick = 'showMyImage("IMG_4278(1).JPG");'>
+                        </td>
+                        <td style = "border: 2px solid white; width: 33%;">
+                            <img src= "IMG_4278.JPG" style = "max-width: 33vw;" id="img9" onclick = 'showMyImage("IMG_4278.JPG");'>
+                        </td>
+                </tr>
+                <tr>
+                        <td style = "border: 2px solid white; width: 33%;">
+                            <img src="IMG_4279.JPG" style = "max-width: 33vw;" id="img10" onclick = 'showMyImage("IMG_4279.JPG");'>
+                        </td>
+                        <td style = "border: 2px solid white; width: 33%;">
+                            <img src= "IMG_4284.JPG" style = "max-width: 33vw;" id="img11" onclick = 'showMyImage("IMG_4284.JPG");'>
+                        </td>
+                        <td style = "border: 2px solid white; width: 33%;">
+                            <img src = "IMG_4291.JPG" style = "max-width: 33vw;" id="img12" onclick = 'showMyImage("IMG_4291.JPG");'>
+                        </td>
+                </tr>    
+                <tr>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src="IMG_4293.JPG" style = "max-width: 33vw;" id="img13" onclick = 'showMyImage("IMG_4293.JPG");'>
+                    </td>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src= "IMG_4296.JPG" style = "max-width: 33vw;" id="img14" onclick = 'showMyImage("IMG_4296.JPG");'>
+                    </td>
+                    <td style = "border: 2px solid white; width: 33%;">
+                        <img src = "IMG_4307.JPG" style = "max-width: 33vw;" id="img15" onclick = 'showMyImage("IMG_4307.JPG");'>
+                    </td>
             </tr>
             <tr>
-                    <td style = "border: 2px solid white; max-width: 33%;">
-                        <img src= "IMG_4249.JPG" style= "max-width: 33vw;">
-                    </td>
-                    <td style = "border: 2px solid white; max-width: 33%;">
-                        <img src = "IMG_4272.JPG" style= "max-width: 33vw;">
-                    </td>
-                    <td style = "border: 2px solid white; max-width: 33%;">
-                        <img src="IMG_4276.JPG" style= "max-width: 33vw;">
-                    </td>
-            </tr>
-            <tr>
-                    <td style = "border: 2px solid white; width: 33%;">
-                        <img src="IMG_4277.JPG" style = "max-width: 33vw;">
-                    </td>
-                    <td style = "border: 2px solid white; width: 33%;">
-                        <img src="IMG_4278(1).JPG" style = "max-width: 33vw;">
-                    </td>
-                    <td style = "border: 2px solid white; width: 33%;">
-                        <img src= "IMG_4278.JPG" style = "max-width: 33vw;">
-                    </td>
-            </tr>
-            <tr>
-                    <td style = "border: 2px solid white; width: 33%;">
-                        <img src="IMG_4279.JPG" style = "max-width: 33vw;">
-                    </td>
-                    <td style = "border: 2px solid white; width: 33%;">
-                        <img src= "IMG_4284.JPG" style = "max-width: 33vw;">
-                    </td>
-                    <td style = "border: 2px solid white; width: 33%;">
-                        <img src = "IMG_4291.JPG" style = "max-width: 33vw;">
-                    </td>
-            </tr>    
-            <tr>
                 <td style = "border: 2px solid white; width: 33%;">
-                    <img src="IMG_4293.JPG" style = "max-width: 33vw;">
+                    <img src="IMG_4308.JPG" style = "max-width: 33vw;" id="img16" onclick = 'showMyImage("IMG_4308.JPG");'>
                 </td>
                 <td style = "border: 2px solid white; width: 33%;">
-                    <img src= "IMG_4296.JPG" style = "max-width: 33vw;">
+                    <img src= "IMG_4309.JPG" style = "max-width: 33vw;" id="img17" onclick = 'showMyImage("IMG_4309.JPG");'>
                 </td>
                 <td style = "border: 2px solid white; width: 33%;">
-                    <img src = "IMG_4307.JPG" style = "max-width: 33vw;">
+                    <img src = "IMG_4312.JPG" style = "max-width: 33vw;" id="img18" onclick = 'showMyImage("IMG_4312.JPG");'>
                 </td>
-        </tr>
-        <tr>
-            <td style = "border: 2px solid white; width: 33%;">
-                <img src="IMG_4308.JPG" style = "max-width: 33vw;">
-            </td>
-            <td style = "border: 2px solid white; width: 33%;">
-                <img src= "IMG_4309.JPG" style = "max-width: 33vw;">
-            </td>
-            <td style = "border: 2px solid white; width: 33%;">
-                <img src = "IMG_4312.JPG" style = "max-width: 33vw;">
-            </td>
-    </tr>  
-        </table>
+        </tr>  
+            </table>
+        </div>
     </body>
 </html>
